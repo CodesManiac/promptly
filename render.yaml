@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: promptly-server
+    env: node
+    plan: free
+    buildCommand: cd server && npm install && npm run build
+    startCommand: cd server && npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GROQ_API_KEY
+        sync: false
+
+  - type: web
+    name: promptly-client
+    env: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: client/dist
+    envVars:
+      - key: VITE_BACKEND_URL
+        value: https://promptly-server.onrender.com
