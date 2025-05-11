@@ -6,6 +6,9 @@
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "types": ["node", "express"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

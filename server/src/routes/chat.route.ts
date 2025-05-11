@@ -1,10 +1,10 @@
-import { Router } from 'express';
+import { Router,Request, Response } from 'express';
 import dotenv from 'dotenv';
 
 dotenv.config();
 const router = Router();
 console.log('Groq APIServer Key:', process.env.GROQ_API_KEY);
-router.post('/', async (req, res) => {
+router.post('/', async (req: Request, res: Response) => {
   const { message } = req.body;
 console.log()
   try {
