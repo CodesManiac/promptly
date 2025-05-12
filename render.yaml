@@ -3,7 +3,7 @@ services:
     name: promptly-server
     env: node
     plan: free
-   buildCommand: cd server && NODE_ENV=development npm install && npm run build
+   buildCommand: cd server && npm install && npm run build
     startCommand: cd server && npm run start
     envVars:
       - key: NODE_ENV
