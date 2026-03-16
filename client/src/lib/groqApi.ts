@@ -18,7 +18,8 @@ export const callGroq = async (chatHistory: { role: string; content: string }[])
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'llama3-8b-8192',
+        // model: 'llama3-8b-8192',
+        model: 'llama-3.1-8b-instant',
         messages: [{ role: 'system', content: 'You are a helpful assistant.' }, ...chatHistory],
       }),
     });
